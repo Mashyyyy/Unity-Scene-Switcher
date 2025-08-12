@@ -71,6 +71,15 @@ namespace SceneSwitcherToolbar
                 OpenSettingsAsset();
             }
 
+            // If no settings found, show a create button
+            if (settings == null)
+            {
+                if (GUILayout.Button("Create Settings", GUILayout.MinWidth(120), GUILayout.Height(22)))
+                {
+                    CreateSettingsAsset();
+                }
+            }
+
             GUILayout.EndHorizontal();
         }
 
@@ -146,6 +155,49 @@ namespace SceneSwitcherToolbar
             {
                 Debug.LogWarning("SceneSwitcherSettings asset not found. Please create one via Create > Tools > Scene Switcher Settings.");
             }
+        }
+
+        // Create SceneSwitcherSettings asset if not found
+        static void CreateSettingsAsset()
+        {
+            string folderPath = "Assets/Editor/SceneSwitcher";
+            string assetPath = "Assets/Editor/SceneSwitcher/SceneSwitcherSettings.asset";
+
+            // Ensure the parent folder exists
+            if (!AssetDatabase.IsValidFolder(folderPath))
+            {
+                // Create the parent directory if it doesn't exist
+                string parentFolderPath = "Assets/Editor";
+                if (!AssetDatabase.IsValidFolder(parentFolderPath))
+                {
+                    AssetDatabase.CreateFolder("Assets", "Editor");
+                }
+
+                // Create the folder for SceneSwitcher if it doesn't exist
+                AssetDatabase.CreateFolder("Assets/Editor", "SceneSwitcher");
+            }
+
+            // Check if the asset already exists
+            if (File.Exists(assetPath))
+            {
+                return; // Skip if the asset already exists
+            }
+
+            // Create the SceneSwitcherSettings asset
+            SceneSwitcherSettings settings = ScriptableObject.CreateInstance<SceneSwitcherSettings>();
+
+            // Create the asset and save it
+            AssetDatabase.CreateAsset(settings, assetPath);
+            AssetDatabase.SaveAssets();
+
+            // Refresh the AssetDatabase to reflect changes
+            AssetDatabase.Refresh();
+
+            // Log the creation
+            Debug.Log("SceneSwitcherSettings asset created at " + assetPath);
+
+            // Reload the settings to reflect the newly created asset
+            LoadSettings();
         }
     }
 }
