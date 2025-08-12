@@ -5,7 +5,7 @@
   "description": "A Unity editor tool to manage scene switching.",
   "unity": "2021.1",
   "dependencies": {
-    "com.marijnz.unity-toolbar-extender": "file:Packages/com.marijnz.unity-toolbar-extender"
+    "com.marijnz.unity-toolbar-extender": "1.4.2"
   },
   "keywords": [
     "SceneSwitcher",
