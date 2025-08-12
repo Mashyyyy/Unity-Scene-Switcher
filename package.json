@@ -4,9 +4,7 @@
   "displayName": "Unity Modular Scene Switcher",
   "description": "A Unity editor tool to manage scene switching.",
   "unity": "2021.1",
-  "dependencies": {
-    "com.marijnz.unity-toolbar-extender": "1.4.2"
-  },
+  "dependencies": {},
   "keywords": [
     "SceneSwitcher",
     "Editor"
