@@ -1,0 +1,20 @@
+{
+  "name": "com.yourcompany.sceneswitcher",
+  "version": "1.0.0",
+  "displayName": "Unity Modular Scene Switcher",
+  "description": "A Unity editor tool to manage scene switching.",
+  "unity": "2021.1",
+  "dependencies": {
+    "com.unity.editorcoroutines": "1.0.0",
+    "com.marijnz.unity-toolbar-extender": "https://github.com/marijnz/unity-toolbar-extender.git#master"
+  },
+  "keywords": [
+    "SceneSwitcher",
+    "Editor"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Jullian Eliezer Calbay",
+    "email": "calbay.jullian@gmail.com"
+  }
+}

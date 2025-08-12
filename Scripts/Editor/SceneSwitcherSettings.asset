@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 120571b23ad0b8948bd6ff0ff7b5f095, type: 3}
+  m_Name: SceneSwitcherSettings
+  m_EditorClassIdentifier: 
+  includedScenes:
+  - {fileID: 102900000, guid: 318297e84997f7a4e96b04f44c072285, type: 3}
+  autoIncludeBuildScenes: 1
+  excludeScenes: []
